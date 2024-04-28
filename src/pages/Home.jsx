@@ -254,6 +254,148 @@ const Home = () => {
             </div>
           </div>
         </div>
+        {/* line chart with annotations */}
+        <header className="my-3">
+          <h3 className="font-bold text-gray-700">
+            1.1 Line Chart with Annotations
+          </h3>
+        </header>
+        <div className="grid grid-cols-1">
+          <Chart
+            type="line"
+            height={300}
+            series={[
+              {
+                name: "Temperature",
+                data: [
+                  8100, 8520, 8130, 8200, 8250, 8300, 8310, 8320, 8320, 8750,
+                  8400, 8110, 8420, 8490, 8500, 8600, 8700, 8500, 8900,
+                ],
+              },
+            ]}
+            options={{
+              chart: {
+                zoom: {
+                  enabled: false,
+                },
+                toolbar: {
+                  show: false,
+                },
+                dropShadow: {
+                  enabled: true,
+                  color: "#7a7a7a",
+                  top: 7,
+                  left: 5,
+                  blur: 1,
+                  opacity: 0.5,
+                },
+              },
+              colors: ["#04d921"],
+              markers: {
+                size: 0,
+                shape: "square",
+              },
+              stroke: {
+                curve: "smooth",
+                width: 2,
+              },
+              annotations: {
+                yaxis: [
+                  {
+                    y: 8200,
+                    borderColor: "#d1040e",
+                    label: {
+                      text: "danger zone",
+                      borderColor: "#d1040e",
+                      borderRadius: 0,
+                      style: {
+                        color: "#fff",
+                        background: "#d1040e",
+                        fontSize: 14,
+                      },
+                    },
+                  },
+                  {
+                    y: 8500,
+                    y2: 8700,
+                    borderColor: "#12c202",
+                    fillColor: "#12c202",
+                    opacity: 0.25,
+                    label: {
+                      text: "climax state",
+                      borderColor: "#12c202",
+                      borderRadius: 0,
+                      style: {
+                        color: "#fff",
+                        background: "#12c202",
+                        fontSize: 14,
+                      },
+                    },
+                  },
+                ],
+                xaxis: [
+                  {
+                    x: 4,
+                    x2: 8,
+                    borderColor: "#2802c2",
+                    fillColor: "#2802c2",
+                    opacity: 0.25,
+                    label: {
+                      text: "downfall",
+                      borderColor: "#2802c2",
+                      borderRadius: 3,
+                      style: {
+                        color: "#fff",
+                        background: "#2802c2",
+                        fontSize: 14,
+                      },
+                    },
+                  },
+                  {
+                    x: 14,
+                    x2: 17,
+                    borderColor: "#f28f05",
+                    fillColor: "#f28f05",
+                    opacity: 0.5,
+                    label: {
+                      text: "raising portion",
+                      borderColor: "",
+                      borderRadius: 5,
+
+                      style: {
+                        color: "#fff",
+                        background: "#f28f05",
+                        fontSize: 14,
+                      },
+                    },
+                  },
+                ],
+                points: [
+                  {
+                    x: 10,
+                    y: 8750,
+                    marker: {
+                      size: 12,
+                      fillColor: "#fff",
+                      strokeColor: "#04d435",
+                      strokeWidth: 2,
+                    },
+                    label: {
+                      text: "climax state",
+                      borderColor: "#ed0518",
+                      borderRadius: 3,
+                      style: {
+                        color: "#fff",
+                        background: "#ed0518",
+                        fontSize: 14,
+                      },
+                    },
+                  },
+                ],
+              },
+            }}
+          />
+        </div>
       </div>
     </div>
   );
