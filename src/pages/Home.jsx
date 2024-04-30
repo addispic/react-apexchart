@@ -196,6 +196,96 @@ const Home = () => {
             />
           </div>
         </div>
+        {/* github style self-test */}
+        <div>
+          <header>
+            <h1 className="font-medium text-gray-700">1.4.1 Github Style Self-Test</h1>
+          </header>
+          <div>
+            <Chart
+              type="area"
+              height={250}
+              width={'50%'}
+              series={[
+                {
+                  name: 'comments',
+                  data: [3, 0, 0, 0, 0, 3, 27, 0, 3, 0, 0, 0, 0, 5, 32, 3, 0, 0, 0, 0, 0, 0, 0, 2, 16, 8, 32, 0, 0, 0, 0, 0, 1, 0, 7, 5, 9, 0, 0, 0, 0, 0, 0, 0, 25, 3, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2]
+                }
+              ]}
+              options={{
+                chart: {
+                  zoom: {
+                    enabled: false
+                  },
+                  toolbar: {
+                    show: false
+                  },
+                  background: '#edf0ee',
+                },
+                dataLabels: {
+                  enabled: false
+                },
+                colors: ['#e36505'],
+                stroke: {
+                  width: 0,
+                  curve: 'monotoneCubic'
+                },
+                fill: {
+                  opacity: 1,
+                  type: 'solid'
+                },
+                xaxis: {
+                  labels: {
+                    show: false
+                  },
+                  axisBorder: {
+                    // show: false
+                  },
+                  axisTicks: {
+                    show: false
+                  }
+                },
+                yaxis: {
+                  labels: {
+                    show: false
+                  },
+
+                },
+                grid: {
+                  padding: {
+                    top: -32,
+                    bottom: -24
+                  },
+                  yaxis: {
+                    lines: {
+                      show: false
+                    }
+                  }
+                },
+                annotations: {
+                  yaxis: [
+                    {
+                      y: 7,
+                      borderColor: '#02b51a',
+                      strokeDashArray: 0,
+                      label: {
+                        text: 'moderate comment',
+                        borderColor: '#02b51a',
+                        borderRadius: 0,
+                        borderWidth: 1,
+                        style: {
+                          color: '#fff',
+                          background: '#02b51a',
+                          fontSize: 14
+                        }
+                      }
+                    }
+                  ]
+                }
+              }}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
