@@ -37,49 +37,161 @@ const Home = () => {
               options={{
                 chart: {
                   zoom: {
-                    enabled: false,
+                    enabled: false
                   },
                   toolbar: {
-                    show: false,
+                    show: false
                   },
                   dropShadow: {
-                    enabled: false,
-                    color: "#e01507",
+                    enabled: true,
+                    color: '#4f4f4f',
                     blur: 3,
-                    opacity: 0.5,
-                  },
-                },
-                stroke: {
-                  curve: "smooth",
-                  width: 1,
-                },
-                markers: {
-                  //   size: 3,
-                  //   shape: "square",
+                    opacity: .25
+                  }
                 },
                 dataLabels: {
                   enabled: false,
-                  //   show: false,
+                },
+                stroke: {
+                  curve: 'smooth',
+                  width: 1
+                },
+                colors: ['#038c27'],
+                yaxis: {
+                  opposite: true
                 },
                 title: {
-                  text: "Fundamental Analysis of Stocks",
-                  align: "left",
+                  text: 'Ethiopia The Land Of Wisdom',
+                  align: 'left'
                 },
                 subtitle: {
-                  text: "Price Movement",
-                  align: "left",
-                },
-                yaxis: {
-                  labels: {
-                    // show: false,
-                  },
-                  opposite: true,
+                  text: 'Bahir Dar, Wisdom',
+                  align: 'left'
                 },
                 xaxis: {
                   axisBorder: {
-                    show: false,
-                  },
+                    show: false
+                  }
+                }
+              }}
+            />
+          </div>
+        </div>
+        {/* spline area */}
+        <div className="mt-5">
+          <header>
+            <h1 className="font-medium text-gray-700">1.2 Spline Area</h1>
+          </header>
+          <div className="grid grid-cols-1">
+            <Chart
+              type="area"
+              height={350}
+              width={'65%'}
+              series={[
+                {
+                  name: 'laptop',
+                  data: [31, 40, 28, 51, 42, 109, 100]
                 },
+                {
+                  name: 'phone',
+                  data: [11, 32, 45, 32, 34, 52, 41]
+                },
+              ]}
+              options={{
+                chart: {
+                  zoom: {
+                    enabled: false
+                  },
+                  toolbar: {
+                    show: false
+                  },
+                  dropShadow: {
+                    enabled: true,
+                    color: '#ad0317',
+                    blur: 3,
+                    opacity: .1
+                  }
+                },
+                colors: ['#128ee6', '#07db3f'],
+                dataLabels: {
+                  enabled: false
+                },
+                stroke: {
+                  curve: 'smooth',
+                  width: 1
+                },
+                xaxis: {
+                  axisBorder: {
+                    show: false
+                  }
+                },
+                yaxis: {
+                  opposite: true,
+                  stepSize: 20,
+                  labels: {
+                    show: false
+                  }
+
+                },
+                fill: {
+                  type: 'gradient',
+                  gradient: {
+                    shadeIntensity: 1,
+                    opacityFrom: .5,
+                    opacityTo: .85,
+                    stops: [0, 70, 100]
+                  }
+                }
+              }}
+            />
+          </div>
+        </div>
+        {/* github style */}
+        <div className="mt-24">
+          <header>
+            <h1 className="font-medium text-gray-700">1.3 Github STyle</h1>
+          </header>
+          <div>
+            <Chart
+              type="area"
+              height={250}
+              width={'55%'}
+              series={[
+                {
+                  name: 'comments',
+                  data: [11, 13, 27, 0, 0, 0, 12, 0, 0, 0, 0, 9, 0, 0, 12, 9, 3, 20, 1, 0, 0, 11, 13, 27, 0, 0, 0, 12, 0, 0, 0, 0, 9, 0, 0, 12, 9, 3, 20, 1, 0, 0, 11, 13, 27, 0, 0, 0, 12, 0, 0, 0, 0, 9, 0, 0, 12, 9, 3, 20, 1, 0, 0]
+                }
+              ]}
+              options={{
+                chart: {
+                  zoom: {
+                    enabled: false
+                  },
+                  toolbar: {
+                    show: false
+                  },
+                  background: '#F6F8FA'
+                },
+                colors: ['#37914f'],
+                stroke: {
+                  width: 0,
+                  curve: 'monotoneCubic'
+                },
+                dataLabels: {
+                  enabled: false
+                },
+                fill: {
+                  opacity: 1,
+                  type: 'solid'
+                },
+                xaxis: {
+                  axisBorder: {
+                    show: false
+                  },
+                  labels: {
+                    show: false
+                  }
+                }
               }}
             />
           </div>
