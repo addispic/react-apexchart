@@ -17,273 +17,137 @@ const Home = () => {
             1. Area Charts
           </h1>
         </header>
-        {/* basic chart */}
         <div>
-          <header>
-            <h1 className="font-medium text-gray-700">1.1 Basic Chart</h1>
-          </header>
-          {/* chart */}
+          {/* basic area chart */}
           <div>
-            <Chart
-              type="area"
-              height={300}
-              width={"65%"}
-              series={[
-                {
-                  name: "STOCK ABC",
-                  data: data,
-                },
-              ]}
-              options={{
-                chart: {
-                  zoom: {
+            <header>
+              <h3 className="font-semibold text-gray-700">1.1 Basic Area Chart</h3>
+            </header>
+            <div>
+              <Chart
+                type="area"
+                height={350}
+                width={'65%'}
+                series={[
+                  {
+                    name: 'products',
+                    data
+                  }
+                ]}
+                options={{
+                  chart: {
+                    zoom: {
+                      enabled: false
+                    },
+                    toolbar: {
+                      show: false
+                    },
+                    dropShadow: {
+                      enabled: false,
+                      color: '#040d78',
+                      blur: 3,
+                      opacity: 1
+                    }
+                  },
+                  dataLabels: {
                     enabled: false
                   },
-                  toolbar: {
-                    show: false
+                  stroke: {
+                    curve: 'smooth',
+                    width: 1
                   },
-                  dropShadow: {
-                    enabled: true,
-                    color: '#4f4f4f',
-                    blur: 3,
-                    opacity: .25
-                  }
-                },
-                dataLabels: {
-                  enabled: false,
-                },
-                stroke: {
-                  curve: 'smooth',
-                  width: 1
-                },
-                colors: ['#038c27'],
-                yaxis: {
-                  opposite: true
-                },
-                title: {
-                  text: 'Ethiopia The Land Of Wisdom',
-                  align: 'left'
-                },
-                subtitle: {
-                  text: 'Bahir Dar, Wisdom',
-                  align: 'left'
-                },
-                xaxis: {
-                  axisBorder: {
-                    show: false
-                  }
-                }
-              }}
-            />
-          </div>
-        </div>
-        {/* spline area */}
-        <div className="mt-5">
-          <header>
-            <h1 className="font-medium text-gray-700">1.2 Spline Area</h1>
-          </header>
-          <div className="grid grid-cols-1">
-            <Chart
-              type="area"
-              height={350}
-              width={'65%'}
-              series={[
-                {
-                  name: 'laptop',
-                  data: [31, 40, 28, 51, 42, 109, 100]
-                },
-                {
-                  name: 'phone',
-                  data: [11, 32, 45, 32, 34, 52, 41]
-                },
-              ]}
-              options={{
-                chart: {
-                  zoom: {
-                    enabled: false
+                  markers: {
+                    size: 2,
+                    shape: 'circle',
+                    strokeWidth: 0,
+                    strokeColors: '#040d78'
                   },
-                  toolbar: {
-                    show: false
+                  fill: {
+                    type: 'gradient',
+                    gradient: {
+                      shadeIntensity: .5,
+                      opacityFrom: .1,
+                      opacityTo: .5,
+                      stops: [0, 100]
+                    }
                   },
-                  dropShadow: {
-                    enabled: true,
-                    color: '#ad0317',
-                    blur: 3,
-                    opacity: .1
-                  }
-                },
-                colors: ['#128ee6', '#07db3f'],
-                dataLabels: {
-                  enabled: false
-                },
-                stroke: {
-                  curve: 'smooth',
-                  width: 1
-                },
-                xaxis: {
-                  axisBorder: {
-                    show: false
-                  }
-                },
-                yaxis: {
-                  opposite: true,
-                  stepSize: 20,
-                  labels: {
-                    show: false
-                  }
-
-                },
-                fill: {
-                  type: 'gradient',
-                  gradient: {
-                    shadeIntensity: 1,
-                    opacityFrom: .5,
-                    opacityTo: .85,
-                    stops: [0, 70, 100]
-                  }
-                }
-              }}
-            />
-          </div>
-        </div>
-        {/* github style */}
-        <div className="mt-24">
-          <header>
-            <h1 className="font-medium text-gray-700">1.3 Github STyle</h1>
-          </header>
-          <div>
-            <Chart
-              type="area"
-              height={250}
-              width={'55%'}
-              series={[
-                {
-                  name: 'comments',
-                  data: [11, 13, 27, 0, 0, 0, 12, 0, 0, 0, 0, 9, 0, 0, 12, 9, 3, 20, 1, 0, 0, 11, 13, 27, 0, 0, 0, 12, 0, 0, 0, 0, 9, 0, 0, 12, 9, 3, 20, 1, 0, 0, 11, 13, 27, 0, 0, 0, 12, 0, 0, 0, 0, 9, 0, 0, 12, 9, 3, 20, 1, 0, 0]
-                }
-              ]}
-              options={{
-                chart: {
-                  zoom: {
-                    enabled: false
-                  },
-                  toolbar: {
-                    show: false
-                  },
-                  background: '#F6F8FA'
-                },
-                colors: ['#37914f'],
-                stroke: {
-                  width: 0,
-                  curve: 'monotoneCubic'
-                },
-                dataLabels: {
-                  enabled: false
-                },
-                fill: {
-                  opacity: 1,
-                  type: 'solid'
-                },
-                xaxis: {
-                  axisBorder: {
-                    show: false
-                  },
-                  labels: {
-                    show: false
-                  }
-                }
-              }}
-            />
-          </div>
-        </div>
-        {/* github style self-test */}
-        <div>
-          <header>
-            <h1 className="font-medium text-gray-700">1.4.1 Github Style Self-Test</h1>
-          </header>
-          <div>
-            <Chart
-              type="area"
-              height={250}
-              width={'50%'}
-              series={[
-                {
-                  name: 'comments',
-                  data: [3, 0, 0, 0, 0, 3, 27, 0, 3, 0, 0, 0, 0, 5, 32, 3, 0, 0, 0, 0, 0, 0, 0, 2, 16, 8, 32, 0, 0, 0, 0, 0, 1, 0, 7, 5, 9, 0, 0, 0, 0, 0, 0, 0, 25, 3, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2]
-                }
-              ]}
-              options={{
-                chart: {
-                  zoom: {
-                    enabled: false
-                  },
-                  toolbar: {
-                    show: false
-                  },
-                  background: '#edf0ee',
-                },
-                dataLabels: {
-                  enabled: false
-                },
-                colors: ['#e36505'],
-                stroke: {
-                  width: 0,
-                  curve: 'monotoneCubic'
-                },
-                fill: {
-                  opacity: 1,
-                  type: 'solid'
-                },
-                xaxis: {
-                  labels: {
-                    show: false
-                  },
-                  axisBorder: {
-                    // show: false
-                  },
-                  axisTicks: {
-                    show: false
-                  }
-                },
-                yaxis: {
-                  labels: {
-                    show: false
-                  },
-
-                },
-                grid: {
-                  padding: {
-                    top: -32,
-                    bottom: -24
-                  },
-                  yaxis: {
-                    lines: {
+                  xaxis: {
+                    axisBorder: {
                       show: false
                     }
-                  }
-                },
-                annotations: {
-                  yaxis: [
-                    {
-                      y: 7,
-                      borderColor: '#02b51a',
-                      strokeDashArray: 0,
-                      label: {
-                        text: 'moderate comment',
-                        borderColor: '#02b51a',
-                        borderRadius: 0,
-                        borderWidth: 1,
-                        style: {
-                          color: '#fff',
-                          background: '#02b51a',
-                          fontSize: 14
+                  },
+                  yaxis: {
+                    opposite: true
+                  },
+                  title: {
+                    text: 'Ethiopia The Land Of Wisdom',
+                    align: 'left'
+                  },
+                  subtitle: {
+                    text: 'Bahir Dar The City Of Light',
+                    align: 'left'
+                  },
+                  grid: {
+                    padding: {
+                      top: -24,
+                      bottom: -12,
+                    }
+                  },
+                  annotations: {
+                    yaxis: [
+                      {
+                        y: 8200,
+                        borderColor: '#04911e',
+                        strokeDashArray: 0,
+                        label: {
+                          text: 'danger zone',
+                          borderColor: '#04911e',
+                          borderRadius: 3,
+                          style: {
+                            color: '#fff',
+                            background: '#04911e',
+                            fontSize: 14
+                          }
                         }
                       }
-                    }
-                  ]
-                }
-              }}
-            />
+                    ],
+                    xaxis: [
+                      {
+                        x: 5,
+                        x2: 10,
+                        borderColor: '#cf7208',
+                        strokeDashArray: 0,
+                        fillColor: '#cf7208',
+                        opacity: .2
+                      }
+                    ],
+                    points: [
+                      {
+                        x: 14,
+                        y: 8607.55,
+                        marker: {
+                          size: 12,
+                          strokeColor: '#7804b3',
+                          strokeWidth: 1,
+                          fillColor: '#FFF'
+                        },
+                        label: {
+                          text: 'Climax Point',
+                          borderColor: '#7804b3',
+                          borderWidth: 0,
+                          borderRadius: 5,
+                          style: {
+                            color: '#fff',
+                            background: '#7804b3',
+                            fontSize: 12
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>
