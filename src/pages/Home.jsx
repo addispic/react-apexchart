@@ -149,6 +149,75 @@ const Home = () => {
               />
             </div>
           </div>
+          {/* github style */}
+          <div>
+            <header>
+              <h3 className="font-semibold">1.2 Github Style</h3>
+            </header>
+            <div>
+              <Chart
+                type="area"
+                height={300}
+                width={'65%'}
+                series={[
+                  {
+                    name: 'comments',
+                    data: [0, 3, 0, 0, 0, 0, 0, 0, 12, 0, 0, 0, 27, 0, 0, 0, 0, 0, 0, 1, 31, 0, 0, 0, 0, 0, 0, 35, 3, 47, 0, 0, 0, 0,0,0,0,0,0,57,0,0,3,27,9,39,0,0,0,0,0,3]
+                  }
+                ]}
+                options={{
+                  chart: {
+                    zoom: {
+                      enabled: false,
+                    },
+                    toolbar: {
+                      show: false
+                    },
+                    background: '#f2f3f7'
+                  },
+                  grid: {
+                    xaxis: {
+                      lines: {
+                        show: false
+                      }
+                    },
+                    yaxis: {
+                      lines: {
+                        show: false
+                      }
+                    },
+                    padding: {
+                      top: -24,
+                      // bottom: -5
+                    }
+                  },
+                  dataLabels: {
+                    enabled: false
+                  },
+                  xaxis: {
+                    axisBorder: {
+                      // show: false
+                    },
+                    axisTicks: {
+                      show: false
+                    },
+                    labels: {
+                      show: false
+                    }
+                  },
+                  colors: ['#498a57'],
+                  fill: {
+                    type: 'solid',
+                    opacity: 1
+                  },
+                  stroke: {
+                    width: 1,
+                    curve: 'monotoneCubic'
+                  }
+                }}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
